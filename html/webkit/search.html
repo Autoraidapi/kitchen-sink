@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head profile="http://a9.com/-/spec/opensearch/1.1/">
+	<meta charset="UTF-8" />
+	<title>Open Search Description</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="search" title="Search" type="application/opensearchdescription+xml" href="https://000455147.deployed.codepen.website/osd.xml" />
+</head>
+<body>
+
+	<script>	
+		
+		document.addEventListener('DOMContentLoaded', function(event){	
+			
+			var searchString = window.location.search.substring(3);
+			
+			switch(searchString){
+					
+				case 'app' :
+				case 'apps' :
+				case 'application' :
+				case 'applications' : alert('Search : '.concat( searchString, ' \nFound : Applications' ) ); break;
+					
+				case 'autoload' :
+				case 'autoloader' :
+				case 'autoloaders' : alert('searched for autoloaders'); break;			
+		
+				case 'print' : 
+					with(window.open('about:blank')){ 
+						document.write('Hello World!'); 
+						document.close(); 
+					} void 0; break;
+			
+				case 'setting' :
+				case 'settings' : window.open('settings://'); break;
+		
+				case 'starplayer' : window.open('starplayer://'); break;
+							
+				case 'transfer' : 
+				case 'transfers' : window.open('transfers://'); break;			
+					
+				// ?	
+				default : return undefined;
+					
+			}
+			
+		}, false);
+		
+	</script>
+</body>
+</html>
