@@ -2,79 +2,103 @@
 <html lang="en">
 
 <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>Index</title>
-		<meta name="referrer" content="origin">	
-		<script id="worker">
-			if('importScripts' in self){
-				self.name = 'Worker';				
-				self.postMessage = self.webkitPostMessage || self.postMessage;				
-				self.addEventListener('message', function(event){										
-					this.postMessage(event.data, [event.data]);					
-				}, false);						
-			}
-			else {
-				self.name = 'Channel';
-			}
-		</script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Index</title>
+    <meta name="referrer" content="origin">
+    <script id="worker">
+        if ('importScripts' in self) {
+            self.name = 'Worker';
+            self.postMessage = self.webkitPostMessage || self.postMessage;
+            self.addEventListener('message', function (event) {
+                this.postMessage(event.data, [event.data]);
+            }, false);
+        } else {
+            self.name = 'Channel';
+        }
+    </script>
 </head>
+
 <body>
 
-		<script>			
-	
-			var port2;			
-			
-			var reader = new FileReader();							
-			
-			var xhr = new XMLHttpRequest();
-			
-			var worker = new Worker(URL.createObjectURL(new Blob(
-				[document.getElementById('worker').textContent], {			
-					type:'text/javascript'				
-				}
-			)));
-			
-			worker.postMessage = worker.webkitPostMessage || worker.postMessage;
-				
-			function initPort(event) {			
-				port2 = event.ports[0];				
-				port2.onmessage = onMessage;				
-			}
+    <script>
+        var port2;
 
-			reader.addEventListener('load', function(event){														
-				port2.postMessage(				
-					'From : ' + location.href + '<br>Message :<br> ' + event.target.result				
-				);				
-			}, false);				
-			
-			worker.onmessage = function(event) {
-				reader.readAsBinaryString(new Blob([eval( event.data ) ], { 				
-					type : 'application/octet-stream' 					
-				}));													
-			}
-			
-			function onMessage(event) {
-				if(event.source == parent && event.origin == location.protocol + '//' + location.hostname);
-				xhr.open('GET', 'data:application/octet-stream, '.concat(event.data), true);
-				xhr.responseType = 'arraybuffer';					
-				xhr.onload = function(){ worker.postMessage(xhr.response, [xhr.response]); }
-				xhr.send(null);						
-			}
+        var reader = new FileReader();
 
-			window.addEventListener('message', initPort, false);
-			
-			window.addEventListener('hashchange', function(event){
-			  var match = (window || this).location.href.match(/#(.*)$/);
-				switch(match ? match[1] : ''){
-			    case 'create' :console.log([match ? match[1] : ''],{id:'',name:''}); break;
-					case 'read' :console.log([match ? match[1] : ''],{id:'',name:''}); break;
-					case 'update' :console.log([match ? match[1] : ''],{id:'',name:''}); break;			
-					case 'destroy' :console.log([match ? match[1] : ''],{id:'',name:''}); break;
-					default : console.log(match); break;
-				}
-			}, false);			
-		</script>
+        var xhr = new XMLHttpRequest();
+
+        var worker = new Worker(URL.createObjectURL(new Blob(
+            [document.getElementById('worker').textContent], {
+                type: 'text/javascript'
+            }
+        )));
+
+        worker.postMessage = worker.webkitPostMessage || worker.postMessage;
+
+        function initPort(event) {
+            port2 = event.ports[0];
+            port2.onmessage = onMessage;
+        }
+
+        reader.addEventListener('load', function (event) {
+            port2.postMessage(
+                'From : ' + location.href + '<br>Message :<br> ' + event.target.result
+            );
+        }, false);
+
+        worker.onmessage = function (event) {
+            reader.readAsBinaryString(new Blob([eval(event.data)], {
+                type: 'application/octet-stream'
+            }));
+        }
+
+        function onMessage(event) {
+            if (event.source == parent && event.origin == location.protocol + '//' + location.hostname);
+            xhr.open('GET', 'data:application/octet-stream, '.concat(event.data), true);
+            xhr.responseType = 'arraybuffer';
+            xhr.onload = function () {
+                worker.postMessage(xhr.response, [xhr.response]);
+            }
+            xhr.send(null);
+        }
+
+        window.addEventListener('message', initPort, false);
+
+        window.addEventListener('hashchange', function (event) {
+            var match = (window || this).location.href.match(/#(.*)$/);
+            switch (match ? match[1] : '') {
+                case 'create':
+                    console.log([match ? match[1] : ''], {
+                        id: '',
+                        name: ''
+                    });
+                    break;
+                case 'read':
+                    console.log([match ? match[1] : ''], {
+                        id: '',
+                        name: ''
+                    });
+                    break;
+                case 'update':
+                    console.log([match ? match[1] : ''], {
+                        id: '',
+                        name: ''
+                    });
+                    break;
+                case 'destroy':
+                    console.log([match ? match[1] : ''], {
+                        id: '',
+                        name: ''
+                    });
+                    break;
+                default:
+                    console.log(match);
+                    break;
+            }
+        }, false);
+    </script>
 
 </body>
 
