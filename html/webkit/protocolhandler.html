@@ -1,11 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Navigator Register Protocol Handler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1674766/eruda.minified.js"></script>
+    <link rel="stylesheet" href="https://assets.codepen.io/1674766/bootstrap.min.css">
+
 </head>
-<body>
-    <p>Navigator Register Protocol handler</p>
+<body translate="no">
+
+    
+
+    <main id="main">
+        <header class="navbar border-dark border-bottom p-0">
+            <nav class="btn-group">
+                <button class="btn btn-sm" id="checkregister" data-action="checkregister">Check</button>
+            </nav>
+            <nav class="btn-group">
+                <button class="btn btn-sm" id="register" data-action="register">Register</button>
+                <button class="btn btn-sm" id="unregister" data-action="unregister">Unregister</button>
+            </nav>
+        </header>
+        <article class="jumbotron p-5">
+
+            <section id="register">
+                <p>Register <a href="https://autoraidapi.github.io/kitchen-sink/html/webkit/protocolhandler.html" target="_blank">this</a> page as handler for
+                    a custom protocol.</p>
+            </section>
+
+            <hr>
+
+            <section>
+                <form action="web+echo://">
+                    <label for="echo">Send To Handler</label>
+                    <input type="text" id="echo" name="echo" class="form-control">
+                </form>
+            </section>
+
+            <hr>
+
+            <section>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="web+echo://">handler</a>
+                    </li>
+                </ul>
+            </section>
+
+        </article>
+
+        <footer class="navbar fixed-bottom navbar-dark bg-dark"></footer>
+        
+    </main>
+
+
+    <script id="rendered-js">
+        const main = document.getElementById('main');
+        const qs = main.querySelector.bind(main);
+
+        const protocols = {
+            0: "bitcoin",
+            1: "geo",
+            2: "im",
+            3: "irc",
+            4: "ircs",
+            5: "magnet",
+            6: "mailto",
+            7: "mms",
+            8: "news",
+            9: "nntp",
+            10: "openpgp4fpr",
+            11: "sip",
+            12: "sms",
+            13: "smsto",
+            14: "ssh",
+            15: "tel",
+            16: "urn",
+            17: "webcal",
+            18: "wtai",
+            19: "xmpp"
+        };
+
+        qs('#register').addEventListener('click', function () {
+            navigator.registerProtocolHandler(
+                "web+echo",
+                "https://autoraidapi.github.io/kitchen-sink/html/webkit/protocolhandler.html?echo=%s",
+                "Echo handler"
+            );
+        });
+
+        qs('#unregister').addEventListener('click', function () {
+            navigator.unregisterProtocolHandler(
+                "web+echo",
+                "https://autoraidapi.github.io/kitchen-sink/html/webkit/protocolhandler.html?echo=%s"
+            );
+        });
+
+        qs('#checkregister').addEventListener('click', function () {
+            if ('isProtocolHandlerRegistered' in navigator) {
+                alert(navigator.isProtocolHandlerRegistered(
+                    "web+echo",
+                    "https://autoraidapi.github.io/kitchen-sink/html/webkit/protocolhandler.html?echo=%s"
+                ));
+            } else {
+                return false;
+            }
+        });
+
+        
+        document.addEventListener('DOMContentLoaded', function (event) {
+            // window.location.search
+        }, false);
+
+        window.addEventListener('hashchange', function (event) {
+
+        }, false);
+
+        window.addEventListener('load', function () {
+            if ('isProtocolHandlerRegistered' in navigator) {
+
+            }
+        }, false);
+    </script>
+
+
+
 </body>
+
 </html>
