@@ -1,11 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
-  <p>Message Channel API, Transferables</p>
+	
+	
+	<form id="form">
+		<label for="input">Send a message</label>
+		<input type="text" id="input" autocomplete="off" autofocus>
+		<button id="button">Submit</button>
+	</form>	
+
+<hr>
+<p id="output">...</p>
+	
+<iframe id="channel" name="channel" src="./post.html" style="display:none;"></iframe>
+
+<script>
+	
+function wrapper(context, callback, params){	
+	if (typeof params == 'undefined') {  
+		return function() {    
+			return callback.apply(context, arguments);      
+		};    
+	} 
+	else {  
+		return function() {    
+			return callback.apply(context, params);      
+		};    
+	}
+}	
+		
+	self.name = 'Document';
+			
+var channel = new MessageChannel();
+var port1 = channel.port1;
+	
+function View(){
+	this.output = document.getElementById('output');
+	this.input = document.getElementById('input');
+	this.iframe = document.getElementById('channel');
+	this.button = document.getElementById('button');
+	this.form = document.getElementById('form');	
+}
+	
+var view = new View();
+	
+port1.onmessage = function(event){
+	view.output.innerHTML = event.data;
+	view.input.value = '';
+};
+	
+view.button.addEventListener('click', function(event){
+	event.preventDefault();
+	port1.postMessage(view.input.value);	
+}, false);	
+	
+view.form.addEventListener("submit", function(event){ 
+	event.preventDefault() 
+}, false);	
+	
+view.iframe.addEventListener("load", function(event){
+	this.contentWindow.postMessage('init', '*', [channel.port2]);
+}, false);
+	
+	
+var Monitor = function() {};
+	
+Monitor.prototype = {
+  update: function(secs) {
+		console.log(secs);
+  }
+}
+	
+var Screen = function() {
+  this.lastTime = 0;
+  this.monitor = new Monitor();
+  requestAnimationFrame(this.tick.bind(this));
+};
+	
+Screen.prototype = {
+  tick: function(time) {
+    var ms = time - this.lastTime;
+    this.lastTime = time;
+    this.monitor.update(ms / 1000);  
+    requestAnimationFrame(this.tick.bind(this));
+  }
+};	
+	
+//var screen = new Screen();
+	
+</script>
 </body>
 </html>
