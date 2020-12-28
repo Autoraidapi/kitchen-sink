@@ -1,0 +1,3 @@
+function Controller(){};
+
+Controller.prototype = {};

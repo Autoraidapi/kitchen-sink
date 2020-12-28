@@ -13,7 +13,8 @@
 
     extend(Router.prototype, Events, {
         preinitialize : function(){},
-        initialize : function(){}
+        initialize : function(){},
+        
     });
 
     Router.extend = inherits;

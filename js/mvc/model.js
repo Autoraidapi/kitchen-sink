@@ -1,0 +1,4 @@
+
+function Model(){};
+
+Model.prototype = {};
