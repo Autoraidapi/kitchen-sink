@@ -1,3 +1,4 @@
+// really just wanted to write some code.. so I started backbones router class which needs history and events
 (function(){
     
     // import Events
