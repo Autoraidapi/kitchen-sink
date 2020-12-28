@@ -1,23 +1,40 @@
 // input > arraybuffer > transfer > blob > output
-// todo .chain
+
+// todo : prototype chain for multithreaded computing model
+ 
 function Notes(pre, select){
+	
 	this.pre = document.getElementById(pre);
 	this.select = document.getElementById(select);
-	this.request = new XMLHttpRequest();
+	this.iframe = document.getElementById('iframe');
+	
 	this.reader = new FileReader();	
+	this.request = new XMLHttpRequest();
+	this.channel = new MessageChannel();
+	this.port1 = this.channel.port1;
+
+	this.iframe.addEventListener('load', this.frameLoad.bind(this, true), false);
+	this.port1.addEventListener('message', this.portMessage.bind(this), false);
 	this.request.addEventListener('load', this.requestLoad.bind(this, true), false);
 	this.reader.addEventListener('load', this.readerLoad.bind(this, true), false);	
 	this.select.addEventListener('change', this.change.bind(this, true), false);
+	
 	this.initialize.apply(this, arguments);
+
 };
 
 Notes.prototype = {
+	
 	initialize : function(url){
 		this.request.responseType = 'arraybuffer';
 		this.request.open('GET', url, true);
 		this.request.send(null);
 	},
+
+	frameLoad : function(){},
 	
+	portMessage : function(){},
+
 	requestLoad : function(){
 		this.pre.innerHTML = '';		
 		this.reader.readAsBinaryString(this.request.response);		
@@ -27,7 +44,8 @@ Notes.prototype = {
 		this.pre.innerHTML = this.reader.result;	
 	},
 	
-	change : function(){},
+	change : function(){}
+
 };
 
 
