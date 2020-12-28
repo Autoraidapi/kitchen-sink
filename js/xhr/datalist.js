@@ -23,5 +23,5 @@ request.onreadystatechange = function(response) {
 
 input.placeholder = "Loading options...";
 
-request.open( "GET", "../json/datalist.json", true );
+request.open( "GET", "../../json/datalist.json", true );
 request.send(null);
