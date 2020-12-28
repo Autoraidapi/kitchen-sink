@@ -1,5 +1,5 @@
-// URL expect <base href="../json/notes/">
-
+// input > arraybuffer > transfer > blob > output
+// todo .chain
 function Notes(pre, select){
 	this.pre = document.getElementById(pre);
 	this.select = document.getElementById(select);
@@ -13,7 +13,7 @@ function Notes(pre, select){
 
 Notes.prototype = {
 	initialize : function(url){
-		this.request.responseType = 'blob';
+		this.request.responseType = 'arraybuffer';
 		this.request.open('GET', url, true);
 		this.request.send(null);
 	},
