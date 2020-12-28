@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -7,10 +7,8 @@
     <title>Bootstrap</title>
     
     <link rel="stylesheet" href="https://assets.codepen.io/1674766/bootstrap.min.css" />
-	<link rel="stylesheet" href="https://assets.codepen.io/1674766/all.css" />
-    <link rel="stylesheet" href="https://assets.codepen.io/1674766/raleway.css" />
     
-    <style>html, body { font-family : 'Raleway'; } </style>
+    <script src="js/modernizr.js"></script>
 
 </head>
 <body>
@@ -21,11 +19,23 @@
         </nav>
     </header>
     
-    <article>
-        <section>
-            <li class="list-group-item"><a href="html/xhr/datalist.html">Datalist</a></li>
-            <li class="list-group-item"><a href="html/xhr/port1.html">Channel</a></li>
-        </section>
-    </article>
+    <main>
+        <article>
+
+        </article>    
+    </main>
+
+
+    <footer class="navbar navbar-dark bg-dark fixed-bottom">
+        <nav class="btn-group"></nav>
+    </footer>
+
+    <!-- jQuery v3.3, Bootstrap Utility v4.5 -->
+    <script src="https://assets.codepen.io/1674766/jquery.min.js"></script>
+    <script src="https://assets.codepen.io/1674766/util.min.js"></script>
+
+    <script>
+    $.when($.ready).then(function(){}).catch(function(){});
+    </script>
 </body>
 </html>
