@@ -22,6 +22,8 @@
             var match = (window || this).location.href.match(/#(.*)$/);
             return match ? match[1] : "";
         },
+
+        checkUrl : function(){},
         
         start : function(){
             History.started = true;
