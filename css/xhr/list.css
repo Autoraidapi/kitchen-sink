@@ -1,0 +1,92 @@
+.bar {
+  height: 1px;
+  box-sizing:border-box;
+}
+.list {
+  color: #E0E0E0;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 3px;
+  letter-spacing: 1px;
+  margin: 1px;
+  border: 1px solid RGBA(0,0,0,0.15);
+}
+.list:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  overflow:auto;    
+  background-color: #333;
+}
+
+ul {
+  list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1674766/out.svg);
+	margin: 0;
+	padding: 0 0 0 1.0em;
+}
+a {
+  color: #E0E0E0;
+  text-decoration: none;
+}
+a:hover {
+	opacity: 0.75;
+	color: steelblue;
+}
+a:active {
+	color: violet;
+}
+
+aside {
+  margin: auto;
+  max-width: 99.95%;
+  height: calc(100vh - 2px);
+  overflow:auto;
+  background-color: #333;
+  border: 1px solid RGBA(0,0,0,0.15);
+}
+aside::-webkit-scrollbar,
+aside::-webkit-scrollbar-button,
+aside::-webkit-scrollbar-track,
+aside::-webkit-scrollbar-track-piece,
+aside::-webkit-scrollbar-thumb,
+aside::-webkit-scrollbar-corner,
+aside::-webkit-resizer {
+	background:;
+}
+aside::-webkit-scrollbar {
+	width:  7px;
+	height: 7px;
+	-webkit-border-radius: 0;
+	        border-radius: 0;
+}
+aside::-webkit-scrollbar-track-piece {
+	-webkit-border-radius: 0;
+	        border-radius: 0;
+  	background: #323232;
+}
+aside::-webkit-scrollbar-thumb {
+	background: #4f4f4f;
+	        border-radius: 5px;
+}
+aside::-webkit-scrollbar-button {
+	width:0;
+	height:0;
+}

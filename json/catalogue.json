@@ -1,0 +1,176 @@
+[{
+    "name": "bower",
+    "uri": "https://bower.io/",
+    "description": "A package manager for the web.",
+    "image": "bower.ico",
+    "type": "cli"
+  },
+  {
+    "name": "go",
+    "uri": "https://golang.org/",
+    "description": "The language is often referred to as Golang because of its domain name, golang.org, but the proper name is Go.",
+    "image": "go.ico",
+    "type": "language"
+  },
+  {
+    "name": "less",
+    "uri": "http://lesscss.org/",
+    "description": "LESS is a dynamic preprocessor style sheet language that can be compiled into Cascading Style Sheets.",
+    "image": "less.ico",
+    "type": "language"
+  },
+  {
+    "name": "markdown",
+    "uri": "https://www.markdownguide.org/",
+    "description": "Markdown is a lightweight markup language with plain-text-formatting syntax.",
+    "image": "markdown.ico",
+    "type": "language"
+  },
+  {
+    "name": "html",
+    "uri": "",
+    "description": "",
+    "image": "html.ico",
+    "type": "language"
+  },
+  {
+    "name": "css",
+    "uri": "",
+    "description": "",
+    "image": "css.ico",
+    "type": "language"
+  },
+  {
+    "name": "javascript",
+    "uri": "https://www.ecma-international.org/default.htm",
+    "desscription": "JavaScript enables interactive web pages and is an essential part of web applications.",
+    "image": "javascript.ico",
+    "type": "language"
+  },
+  {
+    "name": "python",
+    "uri": "",
+    "description": "",
+    "image": "python.ico",
+    "type": "language"
+  },
+  {
+    "name": "c++",
+    "uri": "",
+    "description": "",
+    "image": "cpp.ico",
+    "type": "language"
+  },
+  {
+    "name": "c",
+    "uri": "",
+    "description": "",
+    "image": "c.ico",
+    "type": "language"
+  },
+  {
+    "name": "bootstrap",
+    "uri": "",
+    "description": "",
+    "image": "bootstrap.ico",
+    "type": "framework"
+  },
+  {
+    "name": "jquery",
+    "uri": "",
+    "description": "",
+    "image": "jquery.ico",
+    "type": "library"
+  },
+  {
+    "name": "backbone",
+    "uri": "",
+    "description": "",
+    "image": "backbone.ico",
+    "type": "library"
+  },
+  {
+    "name": "nodejs",
+    "uri": "",
+    "description": "",
+    "image": "nodejs.ico",
+    "type": "server"
+  },
+  {
+    "name": "powershell",
+    "uri": "",
+    "description": "",
+    "image": "powershell.ico",
+    "type": "language"
+  },
+  {
+    "name": "php",
+    "uri": "",
+    "description": "",
+    "image": "php.ico",
+    "type": "server"
+  },
+  {
+    "name": "ruby",
+    "uri": "",
+    "description": "",
+    "image": "ruby.ico",
+    "type": "language"
+  },
+  {
+    "name": "sass",
+    "uri": "",
+    "description": "",
+    "image": "sass.ico",
+    "type": "language"
+  },
+  {
+    "name": "shell",
+    "uri": "",
+    "description": "",
+    "image": "shell.ico",
+    "type": "language"
+  },
+  {
+    "name": "typescript",
+    "uri": "",
+    "description": "",
+    "image": "typescript.ico",
+    "type": "language"
+  },
+  {
+    "name": "xml",
+    "uri": "",
+    "description": "",
+    "image": "xml.ico",
+    "type": "language"
+  },
+  {
+    "name": "vue",
+    "uri": "",
+    "description": "",
+    "image": "vue.ico",
+    "type": "framework"
+  },
+  {
+    "name": "react",
+    "uri": "",
+    "description": "",
+    "image": "react.ico",
+    "type": "framework"
+  },
+  {
+    "name": "default",
+    "uri": "",
+    "description": "",
+    "image": "default.ico",
+    "type": "common"
+  },
+  {
+    "name": "config",
+    "uri": "",
+    "description": "",
+    "image": "config.ico",
+    "type": "common"
+  }
+]

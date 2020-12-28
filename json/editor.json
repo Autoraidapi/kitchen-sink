@@ -1,0 +1,167 @@
+{
+	"menus": [
+		{
+			"command": "formatblock",
+			"header": "- formatting -",
+			"values": {
+				"h1": "Title 1 &lt;h1&gt;",
+				"h2": "Title 2 &lt;h2&gt;",
+				"h3": "Title 3 &lt;h3&gt;",
+				"h4": "Title 4 &lt;h4&gt;",
+				"h5": "Title 5 &lt;h5&gt;",
+				"h6": "Title 6 &lt;h6&gt;",
+				"p": "Paragraph &lt;p&gt;",
+				"pre": "Preformatted &lt;pre&gt;"
+			},
+			"description" : ""			
+		}, {
+			"command": "fontname",
+			"header": "- font -",
+			"values": [
+				"Arial",
+				"Arial Black",
+				"Courier New",
+				"Times New Roman"
+			],
+			"description" : ""
+		}, {
+			"command": "fontsize",
+			"header": "- size -",
+			"values": {
+				"1": "Very small",
+				"2": "A bit small",
+				"3": "Normal",
+				"4": "Medium-large",
+				"5": "Big",
+				"6": "Very big",
+				"7": "Maximum"
+			},
+			"description" : ""
+		}, {
+			"command": "forecolor",
+			"header": "- color -",
+			"values": {
+				"red": "Red",
+				"blue": "Blue",
+				"green": "Green",
+				"white": "White",
+				"black": "Black"
+			},
+			"description" : ""			
+		}, {
+			"command": "backcolor",
+			"header": "- background -",
+			"values": {
+				"white": "White",
+				"red": "Red",
+				"green": "Green",
+				"black": "Black"
+			},
+			"description" : ""
+		}
+	],
+	"buttons" : [
+		{
+			"text": "Clean",
+			"command": "cleanDoc",
+			"image": "\/assets\/img\/editor\/clean.gif",
+			"description" : ""
+		}, {
+			"text": "Print",
+			"command": "printDoc",
+			"image": "\/assets\/img\/editor\/print.png",
+			"description" : ""
+		}, {
+			"text": "Undo",
+			"command": "undo",
+			"image": "\/assets\/img\/editor\/undo.gif",
+ 			"description": "Undoes the last executed command."			
+		}, {
+			"text": "Redo",
+			"command": "redo",
+			"image": "\/assets\/img\/editor\/redo.gif",
+ 			"description": "Redoes the previous undo command."			
+		}, {
+			"text": "Remove formatting",
+			"command": "removeFormat",
+			"image": "\/assets\/img\/editor\/format.png",
+			"description" : ""
+		}, {
+			"text": "Bold",
+			"command": "bold",
+			"image": "\/assets\/img\/editor\/bold.svg",
+			"description" : "Toggles bold on/off for the selection or at the insertion point."
+		}, {
+			"text": "Italic",
+			"command": "italic",
+			"image": "\/assets\/img\/editor\/italic.gif",
+			"description" : "Toggles italics on/off for the selection or at the insertion point."
+		}, {
+			"text": "Underline",
+			"command": "underline",
+			"image": "\/assets\/img\/editor\/underline.gif",
+			"description" : "Toggles underline on/off for the selection or at the insertion point."
+		}, {
+			"text": "Left align",
+			"command": "justifyleft",
+			"image": "\/assets\/img\/editor\/justifyleft.gif",
+			"description" : ""
+		}, {
+			"text": "Center align",
+			"command": "justifycenter",
+			"image": "\/assets\/img\/editor\/justifycenter.gif",
+			"description" : ""
+		}, {
+			"text": "Right align",
+			"command": "justifyright",
+			"image": "\/assets\/img\/editor\/justifyright.gif",
+			"description" : ""
+		}, {
+			"text": "Numbered list",
+			"command": "insertorderedlist",
+			"image": "\/assets\/img\/editor\/numberedlist.gif",
+			"description" : ""
+		}, {
+			"text": "Dotted list",
+			"command": "insertunorderedlist",
+			"image": "\/assets\/img\/editor\/dottedlist.gif",
+			"description" : ""
+		}, {
+			"text": "Quote",
+			"command": "formatblock",
+			"value": "blockquote",
+			"image": "\/assets\/img\/editor\/quote.gif",
+			"description" : ""
+		}, {
+			"text": "Delete indentation",
+			"command": "outdent",
+			"image": "\/assets\/img\/editor\/outdent.gif",
+			"description" : ""
+		}, {
+			"text": "Add indentation",
+			"command": "indent",
+			"image": "\/assets\/img\/editor\/indent.gif",
+			"description" : ""
+		}, {
+			"text": "Hyperlink",
+			"command": "createLink",
+			"image": "\/assets\/img\/editor\/hyperlink.gif",
+			"description" : ""
+		}, {
+			"text": "Cut",
+			"command": "cut",
+			"image": "\/assets\/img\/editor\/cut.gif",
+			"description" : ""
+		}, {
+			"text": "Copy",
+			"command": "copy",
+			"image": "\/assets\/img\/editor\/copy.gif",
+			"description" : ""
+		}, {
+			"text": "Paste",
+			"command": "paste",
+			"image": "\/assets\/img\/editor\/paste.gif",
+			"description" : ""
+		}
+	]
+}

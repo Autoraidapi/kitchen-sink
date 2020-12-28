@@ -1,0 +1,13 @@
+article {
+	max-width : 300px;
+	margin : auto;
+}
+section {
+	margin : .66%;
+	float : left;
+	width : 15%;
+}
+img {
+	height : 100%;
+	width : 100%;
+}
