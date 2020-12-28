@@ -26,7 +26,7 @@
         return result;
     };
 
-    var extend = createAssigner(names);
+    global.extend = createAssigner(names);
 
     function inherits(protoProps, staticProps) {
         var parent = this,
@@ -100,7 +100,7 @@
         this.initialize.apply(this, arguments);
     };
 
-    extend(Base.prototype, Emitter, {
+    global.extend(Base.prototype, Emitter, {
         preinitialize: function () {},
         initialize: function () {}
     });
