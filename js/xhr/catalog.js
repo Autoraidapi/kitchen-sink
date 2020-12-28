@@ -1,37 +1,4 @@
-function View() {
-	
-	/* first */
-	this.initialize.apply(this, arguments);
 
-	/* Constructors */
-	this.fragment = new DocumentFragment();
-	this.request = new XMLHttpRequest();
-
-	/* cache all dom nodes for the app in here */
-	this.category = document.querySelector("#category");
-	this.searchTerm = document.querySelector("#searchTerm");
-	this.searchBtn = document.querySelector("button");
-	this.article = document.querySelector("article");
-
-}
-
-View.prototype = {
-
-	/* additional options and varibales to apply to the `View` object at runtime */
-	initialize: function (options) {
-		options = options || {};
-	},
-
-	/* uses XMLHttpRequest constructor */
-	firstRequest: function () {},
-	fetchBlob: function () {},
-
-	/* uses  DocumentFragment constructor */
-	updateDisplay: function () {},
-	selectProduct: function () {},
-	showProduct: function () {}
-	
-};
 
 // new View();
 
@@ -51,9 +18,9 @@ function firstRequest() {
 		} else {
 			console.log(
 				"Network request for products.json failed with response " +
-					request.status +
-					": " +
-					request.statusText
+				request.status +
+				": " +
+				request.statusText
 			);
 		}
 	};
@@ -71,9 +38,9 @@ request.onload = function () {
 	} else {
 		console.log(
 			"Network request for products.json failed with response " +
-				request.status +
-				": " +
-				request.statusText
+			request.status +
+			": " +
+			request.statusText
 		);
 	}
 };
@@ -94,6 +61,7 @@ function initialize() {
 	categoryGroup = [];
 	finalGroup = [];
 	searchBtn.onclick = selectCategory;
+
 	function selectCategory(e) {
 		e.preventDefault();
 		categoryGroup = [];
@@ -164,11 +132,11 @@ function initialize() {
 			} else {
 				console.log(
 					'Network request for "' +
-						product.name +
-						'" image failed with response ' +
-						request.status +
-						": " +
-						request.statusText
+					product.name +
+					'" image failed with response ' +
+					request.status +
+					": " +
+					request.statusText
 				);
 			}
 		};
